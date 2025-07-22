@@ -1,0 +1,1 @@
+export 'base_change_notifier_view_model_extension.dart';
