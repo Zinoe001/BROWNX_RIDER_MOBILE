@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rider_mobile/widgets/app_colors.dart';
 import 'package:rider_mobile/widgets/text/app_text.dart';
@@ -69,7 +68,7 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60.h,
+      height: 60,
       child: TextButton(
         onPressed: onTap,
         style: TextButton.styleFrom(
@@ -77,7 +76,7 @@ class AppButton extends StatelessWidget {
             iconColor: iconColor,
             side: disable ? const BorderSide() : BorderSide.none,
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16.r)))),
+                borderRadius: BorderRadius.all(Radius.circular(16)))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -88,12 +87,12 @@ class AppButton extends StatelessWidget {
                     // ignore: deprecated_member_use
                     color: iconColor ?? Colors.black)
                 : const SizedBox.shrink(),
-            icon != null ? SizedBox(width: 20.h) : const SizedBox.shrink(),
+            icon != null ? SizedBox(width: 20) : const SizedBox.shrink(),
             AppText.button(
               title,
               color: textColor,
               centered: true,
-              fontSize: 14.h,
+              fontSize: 14,
             
             ),
           ],

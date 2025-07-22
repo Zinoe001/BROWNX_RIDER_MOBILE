@@ -7,8 +7,8 @@ plugins {
 
 android {
     namespace = "com.example.rider_mobile"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = 35
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -24,10 +24,10 @@ android {
         applicationId = "com.example.rider_mobile"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        minSdk = 21           // change this to your desired min SDK version
+        targetSdk = 35        // change this to your desired target SDK version
+        versionCode = 2       // change this to your desired version code
+        versionName = "1.1.0" // change this to your desired version name
     }
 
     buildTypes {

@@ -1,7 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rider_mobile/widgets/app_colors.dart';
 
 class AppFlushBar {
@@ -26,8 +24,8 @@ class AppFlushBar {
       flushbarPosition: FlushbarPosition.TOP,
       duration: duration ?? const Duration(seconds: 3),
       margin: const EdgeInsets.all(12),
-      padding: EdgeInsets.all(8.w),
-      borderRadius: BorderRadius.circular(12.r),
+      padding: EdgeInsets.all(8),
+      borderRadius: BorderRadius.circular(12),
       backgroundColor: Colors.white,
       leftBarIndicatorColor: Colors.green,
       titleText: Text(
@@ -35,14 +33,14 @@ class AppFlushBar {
         style: TextStyle(
           color: Colors.green.shade700,
           fontWeight: FontWeight.bold,
-          fontSize: 16.sp,
+          fontSize: 16,
         ),
       ),
       messageText: Text(
         message,
         style: TextStyle(
           color: Colors.grey.shade700,
-          fontSize: 14.sp,
+          fontSize: 14,
         ),
       ),
     ).show(navigatorKey.currentContext!);
@@ -96,8 +94,8 @@ class AppFlushBar {
       flushbarPosition: FlushbarPosition.TOP,
       duration: duration ?? const Duration(seconds: 3),
       margin: const EdgeInsets.all(12),
-      padding: EdgeInsets.all(8.w),
-      borderRadius: BorderRadius.circular(12.r),
+      padding: EdgeInsets.all(8),
+      borderRadius: BorderRadius.circular(12),
       backgroundColor: Colors.white,
       leftBarIndicatorColor: Colors.red,
       titleText: Text(
@@ -105,14 +103,14 @@ class AppFlushBar {
         style: TextStyle(
           color: Colors.red.shade700,
           fontWeight: FontWeight.bold,
-          fontSize: 16.sp,
+          fontSize: 16,
         ),
       ),
       messageText: Text(
         message,
         style: TextStyle(
           color: Colors.grey.shade700,
-          fontSize: 14.sp,
+          fontSize: 14,
         ),
       ),
     ).show(navigatorKey.currentContext!);

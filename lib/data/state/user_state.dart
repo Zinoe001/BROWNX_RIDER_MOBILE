@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_utils/flutter_utils.dart';
+import 'package:rider_mobile/core/core.dart';
 import 'package:rider_mobile/data/model/model.dart';
 import 'package:rider_mobile/data/state/base_state.dart';
 
@@ -44,6 +46,6 @@ class UserState extends BaseState {
   }
 }
 
-// final userStateProvider = Provider(
-//   (ref) => UserState(ref.read(localCacheProvider)),
-// );
+final userStateProvider = Provider(
+  (ref) => UserState(ref.read(localCacheProvider)),
+);

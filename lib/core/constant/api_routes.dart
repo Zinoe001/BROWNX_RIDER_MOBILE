@@ -3,21 +3,21 @@ class ApiRoute {
   static const String baseUrl = "https://brownx-sgz6.onrender.com";
 
   ///Refresh Url
-  static const String refreshToken = "/dispatches/refresh";
+  static const String refreshToken = "$baseUrl/dispatches/refresh";
 
   ///Location Url
-  static const String location = "/users/location";
+  static const String location = "$baseUrl/users/location";
 
   /// Auth Url
   static const String otpVerification =
-      "/dispatches/verification-code/verification";
-  static const String signUp = "/dispatches/register";
-  static const String login = "/dispatches/login";
-  static const String forgotPassword = "/dispatches/forgot-password";
+      "$baseUrl/dispatches/verification-code/verification";
+  static const String signUp = "$baseUrl/dispatches/register";
+  static const String login = "$baseUrl/dispatches/login";
+  static const String forgotPassword = "$baseUrl/dispatches/forgot-password";
   static const String forgotPasswordVerification =
-      "/dispatches/verification-code/password/reset";
-  static const String resetPassword = "/dispatches/reset-password";
-  static const String resendCode = "/dispatches/resend-code";
+      "$baseUrl/dispatches/verification-code/password/reset";
+  static const String resetPassword = "$baseUrl/dispatches/reset-password";
+  static const String resendCode = "$baseUrl/dispatches/resend-code";
   // static const String googleLogin = "/customers/auth/google/login";
 
   /// Profile Url

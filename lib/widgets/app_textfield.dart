@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter_utils/flutter_utils.dart';
 import 'package:rider_mobile/widgets/app_colors.dart';
@@ -96,22 +95,26 @@ class _AppTextFieldState extends State<AppTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Container(
-        width: double.infinity,
-        height: widget.height,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(14.r)),
-        child: TextFormField(
-          
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: double.infinity,
+          height: widget.height,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(14)),
+          child: TextFormField(
             textCapitalization: widget.textCapitalization,
             maxLength: widget.maxLength,
             maxLines: widget.maxLines,
             minLines: widget.minLines,
             readOnly: widget.readOnly,
             onTap: widget.onTap,
-            style: widget.textFormStyle ??
+            style:
+                widget.textFormStyle ??
                 headingStyle6.copyWith(
-                    color: widget.textColor ?? AppColors.black, fontSize: 14),
+                  color: widget.textColor ?? AppColors.black,
+                  fontSize: 14,
+                ),
             controller: widget.controller,
             inputFormatters: widget.formatter,
             onFieldSubmitted: widget.onSubmitted,
@@ -121,49 +124,66 @@ class _AppTextFieldState extends State<AppTextField> {
             enabled: widget.enabled,
             decoration: InputDecoration(
               fillColor: widget.fillColor ?? const Color(0xFFF4F4F4),
-              errorStyle:
-                  headingStyle6.copyWith(color: AppColors.red, fontSize: 14.sp),
+              errorStyle: headingStyle6.copyWith(
+                color: AppColors.red,
+                fontSize: 14,
+              ),
               labelText: widget.labelText,
-              suffixIconConstraints: BoxConstraints(maxHeight: 30.h),
-              prefixIconConstraints: BoxConstraints(maxHeight: 30.h),
+              suffixIconConstraints: BoxConstraints(maxHeight: 30),
+              prefixIconConstraints: BoxConstraints(maxHeight: 30),
               prefixIcon: widget.prefixIcon,
-              suffixIcon: widget.isPassword
-                  ? IconButton(
-                      icon: Icon(
-                          obscure ? Icons.visibility_off : Icons.visibility),
-                      onPressed: toggleVisibility,
-                      color: AppColors.black.withOpacity(0.6))
-                  : widget.suffixIcon,
+              suffixIcon:
+                  widget.isPassword
+                      ? IconButton(
+                        icon: Icon(
+                          obscure ? Icons.visibility_off : Icons.visibility,
+                        ),
+                        onPressed: toggleVisibility,
+                        color: AppColors.black.withOpacity(0.6),
+                      )
+                      : widget.suffixIcon,
               isDense: true,
-              contentPadding: widget.contentPadding ??
-                  EdgeInsets.only(top: 20.h, bottom: 15.h, left: 20.w),
+              contentPadding:
+                  widget.contentPadding ??
+                  EdgeInsets.only(top: 20, bottom: 15, left: 20),
               hintText: widget.hint,
-              hintStyle: widget.hintStyle ??
+              hintStyle:
+                  widget.hintStyle ??
                   headingStyle6.copyWith(
-                      color:
-                          widget.hintColor ?? AppColors.black.withOpacity(0.35),
-                      fontSize: 14.sp),
+                    color:
+                        widget.hintColor ?? AppColors.black.withOpacity(0.35),
+                    fontSize: 14,
+                  ),
               filled: true,
               enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(14.r)),
-                  borderSide: widget.validCode
-                      ? const BorderSide(color: AppColors.green)
-                      : BorderSide.none),
+                borderRadius: BorderRadius.all(Radius.circular(14)),
+                borderSide:
+                    widget.validCode
+                        ? const BorderSide(color: AppColors.green)
+                        : BorderSide.none,
+              ),
               focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(14.r)),
-                  borderSide:
-                      BorderSide(color: widget.borderColor ?? AppColors.black)),
+                borderRadius: BorderRadius.all(Radius.circular(14)),
+                borderSide: BorderSide(
+                  color: widget.borderColor ?? AppColors.black,
+                ),
+              ),
               errorBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(14.r)),
-                  borderSide: const BorderSide(color: AppColors.red)),
+                borderRadius: BorderRadius.all(Radius.circular(14)),
+                borderSide: const BorderSide(color: AppColors.red),
+              ),
               focusedErrorBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(14.r)),
-                  borderSide:
-                      BorderSide(color: widget.borderColor ?? AppColors.black)),
+                borderRadius: BorderRadius.all(Radius.circular(14)),
+                borderSide: BorderSide(
+                  color: widget.borderColor ?? AppColors.black,
+                ),
+              ),
             ),
-            onChanged: widget.onChanged),
-      )
-    ]);
+            onChanged: widget.onChanged,
+          ),
+        ),
+      ],
+    );
   }
 }
 
@@ -223,11 +243,7 @@ class _PinCodeFieldState extends State<PinCodeField> {
       appContext: context,
       length: widget.length,
       autoDisposeControllers: false,
-      inputFormatters: [
-        FilteringTextInputFormatter.allow(
-          RegExp("[0-9]"),
-        ),
-      ],
+      inputFormatters: [FilteringTextInputFormatter.allow(RegExp("[0-9]"))],
       onChanged: (value) {
         text = value;
       },
@@ -249,11 +265,12 @@ class _PinCodeFieldState extends State<PinCodeField> {
         fieldHeight: 54,
         borderWidth: 2,
         inactiveColor: const Color(0XFFBEBBBB),
-        activeColor: widget.isError || widget.isCompleted
-            ? widget.isCompleted
-                ? const Color(0XFF40F911)
-                : Colors.red
-            : AppColors.primary,
+        activeColor:
+            widget.isError || widget.isCompleted
+                ? widget.isCompleted
+                    ? const Color(0XFF40F911)
+                    : Colors.red
+                : AppColors.primary,
         selectedColor: AppColors.primary,
         errorBorderColor: Colors.red,
       ),
