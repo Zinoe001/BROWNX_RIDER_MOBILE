@@ -6,7 +6,7 @@ class SignUpSuccessfulViewModel extends BaseChangeNotifierViewModel {
       MobileNavigationService.instance;
 
   Future<void> isDone({required String email}) {
-    return _navigationService.navigateAndClearStack(
+    return _navigationService.navigateTo(
       NavigatorRoutes.verifyAccountView,
       extra: {
         RoutingArgumentKey.email: email,
